@@ -1,0 +1,168 @@
+:root {
+    --krem: #FDF8F0;
+    --kraft: #E6D5B8;
+    --cokelat: #5C3A21;
+    --maroon: #801B1B;
+    --teal: #1E6B68;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--krem);
+    color: var(--cokelat);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--cokelat);
+    color: var(--krem);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid var(--maroon);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #F4A261;
+}
+
+nav a {
+    color: var(--krem);
+    text-decoration: none;
+    margin-left: 1.2rem;
+    font-weight: 500;
+}
+
+nav a.active, nav a:hover {
+    color: #F4A261;
+    border-bottom: 2px solid #F4A261;
+}
+
+.menu-section {
+    max-width: 1000px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.badge-vintage {
+    display: inline-block;
+    background-color: var(--teal);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.menu-section h1 {
+    color: var(--maroon);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.menu-card {
+    background-color: #fff;
+    border: 2px solid var(--kraft);
+    border-radius: 12px;
+    padding: 1.8rem;
+    box-shadow: 0 6px 15px rgba(92, 58, 33, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-image {
+    font-size: 4rem;
+    background-color: var(--krem);
+    border: 2px dashed var(--kraft);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.menu-card h2 {
+    color: var(--cokelat);
+    margin-bottom: 0.5rem;
+}
+
+.menu-card h3 {
+    color: var(--maroon);
+    font-size: 1.4rem;
+    margin: 0.8rem 0;
+}
+
+.po-tag {
+    font-size: 0.8rem;
+    color: var(--teal);
+}
+
+.variant-group {
+    text-align: left;
+    margin: 1rem 0;
+    background-color: var(--krem);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.variant-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.variant-group select, .variant-group input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid var(--kraft);
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.btn {
+    background-color: var(--maroon);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background-color: #5e1212;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--kraft);
+    color: var(--cokelat);
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
