@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - MELT & ZEST | BISFEST 2026</title>
+    <style>
+        :root {
+            --krem: #FDF8F0;
+            --kraft: #E6D5B8;
+            --cokelat: #5C3A21;
+            --maroon: #801B1B;
+            --teal: #1E6B68;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--krem); color: var(--cokelat); line-height: 1.6; }
+        header {
+            background-color: var(--cokelat); color: var(--krem);
+            padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 4px solid var(--maroon);
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
+        .logo span { color: #F4A261; }
+        nav a { color: var(--krem); text-decoration: none; margin-left: 1.2rem; font-weight: 500; }
+        nav a.active, nav a:hover { color: #F4A261; }
+        .menu-section { max-width: 1000px; margin: 2.5rem auto; padding: 0 1.5rem; text-align: center; }
+        .badge {
+            display: inline-block; background-color: var(--teal); color: #fff;
+            padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-bottom: 0.5rem;
+        }
+        .menu-section h1 { color: var(--maroon); font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .menu-container {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem; margin-top: 2rem;
+        }
+        .menu-card {
+            background: #fff; border: 2px solid var(--kraft); border-radius: 12px;
+            padding: 1.8rem; box-shadow: 0 6px 15px rgba(92, 58, 33, 0.08);
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .product-image {
+            font-size: 4rem; background-color: var(--krem); border: 2px dashed var(--kraft);
+            border-radius: 10px; padding: 1rem; margin-bottom: 1rem;
+        }
+        .menu-card h2 { color: var(--cokelat); margin-bottom: 0.5rem; }
+        .menu-card h3 { color: var(--maroon); font-size: 1.4rem; margin: 0.8rem 0; }
+        .po-tag { font-size: 0.8rem; color: var(--teal); }
+        .variant-group {
+            text-align: left; margin: 1rem 0; background-color: var(--krem);
+            padding: 1rem; border-radius: 8px;
+        }
+        .variant-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem; }
+        .variant-group select, .variant-group input {
+            width: 100%; padding: 8px; margin-top: 4px; border: 1px solid var(--kraft);
+            border-radius: 6px; background-color: #fff;
+        }
+        .btn {
+            background-color: var(--maroon); color: #fff; border: none;
+            padding: 0.85rem 1.2rem; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer;
+        }
+        .btn:hover { background-color: #5e1212; }
+        footer {
+            text-align: center; padding: 1.5rem; background-color: var(--kraft);
+            color: var(--cokelat); margin-top: 3rem; font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">MELT <span>&</span> ZEST</div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="menu.html" class="active">Menu</a>
+            <a href="cart.html">Keranjang (<span id="cart-count">0</span>)</a>
+            <a href="login.html">Admin</a>
+        </nav>
+    </header>
+
+    <section class="menu-section">
+        <div class="badge">BISFEST 2026 • UNPAM SERANG</div>
+        <h1>Menu Favorit Kami</h1>
+        <p>Perpaduan manis lembut & asam segar dalam satu stan. Pilih varian favoritmu!</p>
+
+        <div class="menu-container">
+            <div class="menu-card">
+                <div class="product-image">🍨</div>
+                <h2>Roti Ice Cream</h2>
+                <p>2 lembar roti tawar lembut dengan 3 scoop es krim Campina Neapolitan & pilihan topping.</p>
+                <h3>Rp13.000</h3>
+
+                <div class="variant-group">
+                    <label for="rasa-es">Pilih Rasa Es Krim:</label>
+                    <select id="rasa-es">
+                        <option value="Vanila">Vanila</option>
+                        <option value="Coklat">Coklat</option>
+                        <option value="Stroberi">Stroberi</option>
+                        <option value="Mix 3 Rasa">Mix (Vanila, Coklat, Stroberi)</option>
+                    </select>
+
+                    <label for="topping-roti">Pilih Topping:</label>
+                    <select id="topping-roti">
+                        <option value="Oreo Remuk">Oreo Remuk</option>
+                        <option value="Keju Parut">Keju Parut</option>
+                        <option value="Susu Kental Manis">Susu Kental Manis</option>
+                        <option value="Selai Stroberi">Selai Stroberi</option>
+                    </select>
+                </div>
+
+                <button class="btn" onclick="tambahRoti()">+ Tambah ke Keranjang</button>
+            </div>
+
+            <div class="menu-card">
+                <div class="product-image">🍍</div>
+                <h2>Asinan Buah Segar</h2>
+                <p>Potongan nanas, bengkoang, salak, mangga muda & kedondong dengan kuah segar + kacang.</p>
+                <h3>Rp10.000 <small class="po-tag">(Kuota PO: 15 Cup)</small></h3>
+
+                <div class="variant-group">
+                    <label for="level-pedas">Tingkat Kepedasan:</label>
+                    <select id="level-pedas">
+                        <option value="Tidak Pedas">Tidak Pedas</option>
+                        <option value="Pedas Sedang">Pedas Sedang</option>
+                        <option value="Ekstra Pedas">Ekstra Pedas</option>
+                    </select>
+
+                    <label for="catatan-asinan">Catatan (Opsional):</label>
+                    <input type="text" id="catatan-asinan" placeholder="Contoh: Tanpa kacang">
+                </div>
+
+                <button class="btn" onclick="tambahAsinan()">+ Tambah ke Keranjang</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 MELT & ZEST — Kelompok 2 (05SISE006) Sistem Informasi UNPAM Serang.</p>
+    </footer>
+
+    <script src="js/cart.js"></script>
+</body>
+</html>

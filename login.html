@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin - MELT & ZEST</title>
+    <style>
+        :root {
+            --krem: #FDF8F0;
+            --kraft: #E6D5B8;
+            --cokelat: #5C3A21;
+            --maroon: #801B1B;
+            --teal: #1E6B68;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--krem); color: var(--cokelat); line-height: 1.6; }
+        header {
+            background-color: var(--cokelat); color: var(--krem);
+            padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 4px solid var(--maroon);
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
+        .logo span { color: #F4A261; }
+        nav a { color: var(--krem); text-decoration: none; margin-left: 1.2rem; font-weight: 500; }
+        nav a.active, nav a:hover { color: #F4A261; }
+        .login-box {
+            max-width: 420px; margin: 4rem auto; background: #fff;
+            border: 2px solid var(--kraft); border-radius: 12px; padding: 2rem;
+            box-shadow: 0 6px 15px rgba(92, 58, 33, 0.08);
+        }
+        .login-box h1 { color: var(--maroon); font-size: 1.6rem; margin-bottom: 0.4rem; text-align: center; }
+        .login-box p.sub { font-size: 0.88rem; text-align: center; margin-bottom: 1.5rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 4px; font-size: 0.9rem; }
+        .form-group input {
+            width: 100%; padding: 10px; border: 1px solid var(--kraft); border-radius: 6px;
+        }
+        .btn {
+            width: 100%; background-color: var(--maroon); color: #fff; border: none;
+            padding: 0.9rem; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer;
+            margin-top: 0.5rem;
+        }
+        .btn:hover { background-color: #5e1212; }
+        .hint {
+            margin-top: 1rem; background: var(--krem); padding: 0.75rem;
+            border-radius: 8px; font-size: 0.8rem; border-left: 4px solid var(--teal);
+        }
+        footer {
+            text-align: center; padding: 1.5rem; background-color: var(--kraft);
+            color: var(--cokelat); margin-top: 4rem; font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">MELT <span>&</span> ZEST</div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="menu.html">Menu</a>
+            <a href="cart.html">Keranjang (<span id="cart-count">0</span>)</a>
+            <a href="login.html" class="active">Admin</a>
+        </nav>
+    </header>
+
+    <div class="login-box">
+        <h1>Login Tim MELT & ZEST</h1>
+        <p class="sub">Akses pencatatan transaksi, stok & keuangan BISFEST 2026</p>
+
+        <form onsubmit="prosesLogin(event)">
+            <div class="form-group">
+                <label for="username">Username Tim</label>
+                <input type="text" id="username" placeholder="Masukkan username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Kata Sandi</label>
+                <input type="password" id="password" placeholder="Masukkan kata sandi" required>
+            </div>
+            <button type="submit" class="btn">Masuk Dashboard</button>
+        </form>
+
+        <div class="hint">
+            <strong>Akun Tim Kelompok 2:</strong><br>
+            Username: <code>meltzest</code><br>
+            Password: <code>bisfest2026</code>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 MELT & ZEST — Kelompok 2 (05SISE006) Sistem Informasi UNPAM Serang.</p>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script>
+        function prosesLogin(e) {
+            e.preventDefault();
+            const user = document.getElementById('username').value.trim();
+            const pass = document.getElementById('password').value.trim();
+
+            if (user === 'meltzest' && pass === 'bisfest2026') {
+                sessionStorage.setItem('meltZestAuth', 'true');
+                window.location.href = 'admin.html';
+            } else {
+                alert('Username atau password salah! Silakan cek kembali.');
+            }
+        }
+    </script>
+</body>
+</html>
